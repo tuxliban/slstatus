@@ -11,7 +11,7 @@ const char *
 clima(void)
 {
 	int fd;				// Definir variable de tipo entero (file descriptor)
-	char buf[2048];			// Almacenar como máximo 10 bytes en el buffer
+	char buf[2048];			// Almacenar como máximo 2048 bytes en el buffer
 
 	fd = open ("/tmp/weather", O_RDONLY);	// Abrir archivo en sólo lectura
 
@@ -21,10 +21,10 @@ clima(void)
 	}
 	else
 	{
-		read(fd, buf, 9);	// Leer 2 dígitos del file descriptor almacenados en el buffer
+		read(fd, buf, 9);	// Leer los dígitos especificados del file descriptor almacenados en el buffer
 		close(fd);		// Cerrar fichero que se ha abierto para leer
 
-		return bprintf ("%s", buf);	
+		return bprintf ("%s", buf);	// Regresar el valor almacenado en el buffer
 	}
 	return 0;
 }
