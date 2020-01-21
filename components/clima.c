@@ -17,7 +17,7 @@ clima(void)
 
 	if(fd == -1)		// Si no se puede abrir el archivo
 	{
-		bprintf ("n/a");
+		return bprintf ("n/a");
 	}
 	else
 	{
